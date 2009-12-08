@@ -1,0 +1,14 @@
+diff -dur fluidsynth-dssi-1.0.0.orig/configure.ac fluidsynth-dssi-1.0.0/configure.ac
+--- fluidsynth-dssi-1.0.0.orig/configure.ac	2009-01-05 00:30:16.000000000 +0100
++++ fluidsynth-dssi-1.0.0/configure.ac	2009-12-08 20:26:49.000000000 +0100
+@@ -43,10 +43,6 @@
+ if test "x${try_gtk2}" = 'xyes'; then
+     AM_PATH_GTK_2_0(2.0.0, with_gtk='yes (version 2.0)', with_gtk=no)
+ fi
+-dnl  No GTK+ 2.x found, look for GTK+ 1.2 instead
+-if test "x${with_gtk}" = 'xno'; then
+-    AM_PATH_GTK(1.2.0, with_gtk='yes (version 1.2)', AC_MSG_WARN([GUI will not be built because no version of GTK+ was found]))
+-fi
+ AM_CONDITIONAL(BUILD_GUI, test "x${with_gtk}" != 'xno')
+ echo "GTK support: $with_gtk"
+ 
