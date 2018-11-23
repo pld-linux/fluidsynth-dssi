@@ -2,12 +2,13 @@ Summary:	Software synthesizer plugin for the DSSI Soft Synth Interface
 Summary(pl.UTF-8):	Wtyczka programowego syntezatora dla interfejsu DSSI
 Name:		fluidsynth-dssi
 Version:	1.0.0
-Release:	4
+Release:	5
 License:	GPL v2+
 Group:		Applications/Sound
 Source0:	http://downloads.sourceforge.net/dssi/%{name}-%{version}.tar.gz
 # Source0-md5:	6c9f660f0df4d2aad5076de75b2a0a67
 Patch0:		%{name}-no_gtk1.patch
+Patch1:		fluidsynth2.patch
 URL:		http://dssi.sourceforge.net/
 BuildRequires:	alsa-lib-devel
 BuildRequires:	autoconf >= 2.50
@@ -51,6 +52,7 @@ Oparty na GTK+ graficzny interfejs użytkownika do FluidSynth-DSSI.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
